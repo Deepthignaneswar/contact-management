@@ -59,7 +59,7 @@ int main()
 				
 				fflush(stdin);
 				printf("Address:\t");
-				scanf("%d[^\n]",&list.add);
+				scanf("%[^\n]",&list.add);
 				
 				fflush(stdin);
 				printf("E-mail address(ID):\t");
