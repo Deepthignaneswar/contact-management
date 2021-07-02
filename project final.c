@@ -28,7 +28,8 @@ int main()
 		printf("\n\t\t3.Search for contact");
 		printf("\n\t\t4.Edit a contact ");
 		printf("\n\t\t5.Delete a contact");
-		printf("\n\t\t6.Exit");
+		printf("\n\t\t6.Erase all contacts");
+		printf("\n\t\t7.exit");
 		printf("\n\t\t=====================");
 		
 		printf("Enter your choice");
@@ -247,13 +248,31 @@ int main()
 				
 			
 			break;
+	case 6:
+    	printf("\n\n\tare you sure you want to delete all the contacts");
+    	printf("\n\n\t press 1 to delete");
+    	printf("\n\n\t press 2 to exit");
+    	scanf("%d",&da);
+    	if(da==1)
+    	{
+    		fclose(fopen("contact.dll", "w"));
+		}
+		else 
+		{
 			
+			printf("\n\n\t\toperation cancelled");
+			getch();
+			
+			goto main;
+		}
+		break;
 		
-		deafult:
-			printf("invalid choice");
-			break;
-		case 6:
+	case 7:
 			exit(0);
+			break;
+		
+	deafult:
+			printf("invalid choice");
 			break;
 	}	
 	
