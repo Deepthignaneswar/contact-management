@@ -179,45 +179,37 @@ int main()
 	break;
 	case 4:
 		system("cls");
-		fp=fopen("contact.dll","r");
-		ft=fopen("temp.dat","w");
 		fflush(stdin);
 		printf("....Edit contact ");
 		printf("\n================\n");
-		printf("\n\t....Enter the name of contact to edit:");
-		scanf("%[^\n]",name);
-		while(fread(&list,sizeof(list),1,fp)==1)
-		{
-			
-			
-			
-			if(stricmp(name,list.name)==0)
-			
-			fwrite(&list,sizeof(list),1,ft);
-			else 
-			{
-			
-			printf("contact doesnt exist");
-			exit(0);
-			
-			}
-	}
-			
-			
-			
-		
+		printf("\n\t....Enter the name of contact to edit:\t");
 		fflush(stdin);
+		scanf("%[^\n]",name);
+		l=strlen(name);
+		fp=fopen("contact.dll","r");
+		ft=fopen("temp.dat","w");
+	while(fread(&list,sizeof(list),1,fp)==1)
+
+        {
+             found=1;
+            for(i=0;i<=l;i++)
+            query[i]=list.name[i];
+            name[l]='\0';
+            if(stricmp(query,name)==0)
+            {
+            
 		printf("\n\n...::Editing '%s'\n\n",name);
-		printf("...::Name(Use identical):");
+		printf("...::Name(Use identical):\t");
+		fflush(stdin);
 		scanf("%[^\n]",&list.name);
 		fflush(stdin);
-		printf("...:phone:");
+		printf("...:Phone:\t");
 		scanf("%ld",&list.phno);
 		fflush(stdin);
-		printf("..::Address:");
+		printf("..::Address:\t");
 		scanf("%[^\n]",&list.add);
 		fflush(stdin);
-		printf("...:Email address");
+		printf("...:Email address\t");
 		gets(list.email);
 		printf("\n");
 		fwrite(&list,sizeof(list),1,ft);
@@ -225,8 +217,13 @@ int main()
 		fclose(ft);
 		remove("contact.dll");
 		rename("temp.dat","contact.dll");
+         
+		}
+		else 
+		printf("contact not found");
+}
+	break;
 		
-		break;
 		
 		case 5:
 		system("cls");
