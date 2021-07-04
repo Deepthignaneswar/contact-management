@@ -13,7 +13,7 @@ struct contact
 }list;
 char query[30],name[30];
 FILE *fp,*ft;
-int i,n,ch,found,l,dch;
+int i,n,ch,found,l,dch,da;
 long int ph;
 
 int main()
