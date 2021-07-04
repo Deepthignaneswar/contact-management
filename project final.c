@@ -64,7 +64,7 @@ int main()
 				
 				fflush(stdin);
 				printf("E-mail address(ID):\t");
-				gets(list.email);
+				scanf("%[^\n]",&list.email);
 				printf("\n");
 				
 				fwrite(&list,sizeof(list),1,fp);
