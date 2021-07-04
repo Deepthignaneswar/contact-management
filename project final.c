@@ -14,7 +14,7 @@ struct contact
 char query[30],name[30];
 FILE *fp,*ft;
 int i,n,ch,found,l,dch,da;
-long int ph;
+
 
 int main()
 {
@@ -55,7 +55,7 @@ int main()
 				
 				
 				fflush(stdin);
-				printf("phone number:\t");
+				printf("Phone number:\t");
 				scanf("%ld",&list.phno);
 				
 				fflush(stdin);
@@ -220,7 +220,7 @@ int main()
          
 		}
 		else 
-		printf("contact not found");
+		printf("Contact not found");
 }
 	break;
 		
@@ -246,9 +246,9 @@ int main()
 			
 			break;
 	case 6:
-    	printf("\n\n\tare you sure you want to delete all the contacts");
-    	printf("\n\n\t press 1 to delete");
-    	printf("\n\n\t press 2 to exit");
+    	printf("\n\n\tAre you sure you want to delete all the contacts");
+    	printf("\n\n\t Press 1 to delete");
+    	printf("\n\n\t Press 2 to exit\n\t");
     	scanf("%d",&da);
     	if(da==1)
     	{
@@ -257,7 +257,7 @@ int main()
 		else 
 		{
 			
-			printf("\n\n\t\toperation cancelled");
+			printf("\n\n\t\tOperation cancelled");
 			getch();
 			
 			goto main;
@@ -269,14 +269,14 @@ int main()
 			break;
 		
 	deafult:
-			printf("invalid choice");
+			printf("Invalid choice");
 			break;
 	}	
 	
 
 	printf("\n\n\n\t....::Enter the choice");
 	printf("\n\n\t1.Main menu");
-	printf("\n\n\t2.exit\n");
+	printf("\n\n\t2.Exit\n");
 	scanf("%d",&ch);
 	switch(ch)
 	{
@@ -285,16 +285,10 @@ int main()
 		case 2:
 			break;
 		default:
-			printf("invalid choice");
+			printf("Invalid choice");
 			break;
 	}
 	return 0;
 }
 	
 		
-								
-									
-		
-		
-		
-
